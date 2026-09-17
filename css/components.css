@@ -23,6 +23,10 @@
   transform: translateY(-2px);
 }
 
+.button:active {
+  transform: translateY(0);
+}
+
 .button-primary {
   background: linear-gradient(135deg, var(--rose-blush), var(--rose-gold));
   color: var(--white);
@@ -48,7 +52,8 @@
 }
 
 .feature-card,
-.product-card {
+.product-card,
+.benefit-card {
   position: relative;
   padding: 1.5rem 1.35rem;
   border-radius: 1.8rem;
@@ -71,6 +76,7 @@
 
 .feature-card:hover,
 .product-card:hover,
+.benefit-card:hover,
 .part-item:hover,
 .course-module:hover {
   transform: translateY(-4px);
@@ -79,19 +85,22 @@
 }
 
 .feature-card h3,
-.product-card h3 {
+.product-card h3,
+.benefit-card h3 {
   margin-top: 1rem;
   font-size: 1.45rem;
   letter-spacing: -0.04em;
 }
 
 .feature-card p,
-.product-card p {
+.product-card p,
+.benefit-card p {
   margin-top: 0.8rem;
   color: rgba(247, 241, 243, 0.74);
 }
 
-.icon-wrap {
+.icon-wrap,
+.benefit-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -115,6 +124,7 @@
   border-color: rgba(243, 179, 196, 0.46);
   box-shadow: 0 18px 45px rgba(224, 156, 170, 0.14), 0 0 34px rgba(243, 179, 196, 0.1);
   background: linear-gradient(180deg, rgba(52, 31, 40, 0.82), rgba(28, 17, 21, 0.9));
+  transform: translateY(-2px) scale(1.01);
 }
 
 .product-card.featured::before {
@@ -148,11 +158,12 @@
 
 .product-tag {
   width: fit-content;
+  font-weight: 600;
 }
 
 .price-row {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 1rem;
   margin-top: auto;
@@ -177,10 +188,12 @@
 
 .part-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 6rem;
-  padding: 1rem 1rem;
+  gap: 0.55rem;
+  min-height: 6.8rem;
+  padding: 1rem 0.9rem;
   border-radius: 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(180deg, rgba(35, 26, 31, 0.7), rgba(45, 34, 40, 0.82));
@@ -189,6 +202,37 @@
   font-weight: 500;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02), 0 12px 24px rgba(12, 7, 9, 0.14);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.part-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.8rem;
+  background: rgba(243, 179, 196, 0.08);
+  border: 1px solid rgba(243, 179, 196, 0.14);
+  color: var(--rose-blush);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.benefit-card {
+  padding: 1.75rem 1.4rem;
+  min-height: 100%;
+}
+
+.benefit-card h3 {
+  margin-top: 1rem;
+}
+
+.part-item::before {
+  content: "✦";
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--rose-blush);
+  font-size: 0.9rem;
 }
 
 .part-item:hover {
